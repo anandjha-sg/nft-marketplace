@@ -133,7 +133,7 @@ export default function Page1(props) {
                             <div className="item features-image сol-12 col-md-6 col-lg-6" key={NFT.id}>
                                 <div className="item-wrapper">
                                     <div className="item-img">
-                                        <img src={`https://ipfs.infura.io/ipfs/${NFT.ipfsHash}`} alt='' />
+                                        {/* <img src={`https://ipfs.infura.io/ipfs/${NFT.ipfsHash}`} alt='' /> */}
                                     </div>
                                     <div className="item-content">
                                         <h5 className="item-title mbr-fonts-style display-5">{NFT.metadata.name}</h5>
