@@ -102,7 +102,7 @@ export default function Home(props) {
                                     <div className="item features-image сol-12 col-md-6 col-lg-6">
                                         <div className="item-wrapper">
                                             <div className="item-img">
-                                                {/* <img src={`https://ipfs.infura.io/ipfs/${userNFT[NFTID].nftRef.ipfsHash}`} alt='' /> */}
+                                                <img src={`https://ipfs.infura.io/ipfs/${userNFT[NFTID].nftRef.ipfsHash}`} alt='' />
                                             </div>
                                             <div className="item-content">
                                                 <h5 className="item-title mbr-fonts-style display-5">{allMarketPlcaeNFT[userNFT][NFTID].nftRef.metadata.name}</h5>
@@ -114,10 +114,6 @@ export default function Home(props) {
                                         </div>
                                     </div>
                                 )
-
-                                    // {
-                                    //     console.log(allMarketPlcaeNFT[userNFT][NFTID].nftRef.metadata.name);
-                                    // }
                                 )
                             )
                         }
