@@ -4,11 +4,11 @@ import NonFungibleToken from 0x631e88ae7f1d7c20
 import NFTMarketplace from 0x4ce71b5fc17521fc
 
 pub fun main(account: Address): {UInt64: NFTMarketplace.SaleItem} {
-  let saleCollection = getAccount(account).getCapability(/public/MySaleCollection)
+  let saleCollection = getAccount(account).getCapability(/public/MyCryptonautSaleCollection)
                         .borrow<&NFTMarketplace.SaleCollection{NFTMarketplace.SaleCollectionPublic}>()
                         ?? panic("Could not borrow the user's SaleCollection")
 
-  let collection = getAccount(account).getCapability(/public/MyNFTCollection) 
+  let collection = getAccount(account).getCapability(/public/MyCryptonautCollection) 
                     .borrow<&MyNFT.Collection{NonFungibleToken.CollectionPublic, MyNFT.CollectionPublic}>()
                     ?? panic("Can't get the User's collection.")
 

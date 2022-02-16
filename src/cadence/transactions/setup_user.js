@@ -15,8 +15,8 @@ transaction {
     let MyCryptonautCollection = acct.getCapability<&MyNFT.Collection>(/private/MyCryptonautCollection)
     let FlowTokenVault = acct.getCapability<&FlowToken.Vault{FungibleToken.Receiver}>(/public/flowTokenReceiver)
 
-    acct.save(<- NFTMarketplace.createSaleCollection(MyCryptonautCollection: MyCryptonautCollection, FlowTokenVault: FlowTokenVault), to: /storage/MySaleCollection)
-    acct.link<&NFTMarketplace.SaleCollection{NFTMarketplace.SaleCollectionPublic}>(/public/MySaleCollection, target: /storage/MySaleCollection)
+    acct.save(<- NFTMarketplace.createSaleCollection(MyCryptonautCollection: MyCryptonautCollection, FlowTokenVault: FlowTokenVault), to: /storage/MyCryptonautSaleCollection)
+    acct.link<&NFTMarketplace.SaleCollection{NFTMarketplace.SaleCollectionPublic}>(/public/MyCryptonautSaleCollection, target: /storage/MyCryptonautSaleCollection)
   }
 
   execute {

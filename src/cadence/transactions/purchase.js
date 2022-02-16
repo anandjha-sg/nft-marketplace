@@ -7,11 +7,11 @@ import FlowToken from 0x7e60df042a9c0868
 transaction(account: Address, id: UInt64) {
 
   prepare(acct: AuthAccount) {
-    let saleCollection = getAccount(account).getCapability(/public/MySaleCollection)
+    let saleCollection = getAccount(account).getCapability(/public/MyCryptonautSaleCollection)
                         .borrow<&NFTMarketplace.SaleCollection{NFTMarketplace.SaleCollectionPublic}>()
                         ?? panic("Could not borrow the user's SaleCollection")
 
-    let recipientCollection = getAccount(acct.address).getCapability(/public/MyNFTCollection) 
+    let recipientCollection = getAccount(acct.address).getCapability(/public/MyCryptonautCollection) 
                     .borrow<&MyNFT.Collection{NonFungibleToken.CollectionPublic}>()
                     ?? panic("Can't get the User's collection.")
 

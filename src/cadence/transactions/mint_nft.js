@@ -4,7 +4,7 @@ import MyNFT from 0x4ce71b5fc17521fc
 transaction(ipfsHash: String, name: String) {
 
   prepare(acct: AuthAccount) {
-    let collection = acct.borrow<&MyNFT.Collection>(from: /storage/MyNFTCollection)
+    let collection = acct.borrow<&MyNFT.Collection>(from: /storage/MyCryptonautCollection)
                         ?? panic("This collection does not exist here")
 
     let nft <- MyNFT.createToken(ipfsHash: ipfsHash, metadata: {"name": name})
