@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from './components/index'
 import Page1 from './components/Page1'
 import * as fcl from "@onflow/fcl";
@@ -16,7 +16,6 @@ fcl.config()
 
 function App() {
   const [user, setUser] = useState({ loggedIn: false });
-  const [isLoggedIn, setLogIn] = useState(false);
 
   useEffect(() => {
     fcl.currentUser().subscribe(setUser)
@@ -26,7 +25,6 @@ function App() {
     event.preventDefault();
     const thisUser = await fcl.authenticate()
     console.log(thisUser.addr);
-    setLogIn(true)
     fetch('/newuser', {
       method: 'POST',
       headers: {

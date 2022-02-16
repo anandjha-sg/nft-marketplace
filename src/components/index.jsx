@@ -109,7 +109,7 @@ export default function Home(props) {
                                                 <h5 className="item-title mbr-fonts-style display-5">Price - {allMarketPlcaeNFT[userNFT][NFTID].price}</h5>
                                             </div>
                                             <div className="mbr-section-btn item-footer mt-2">
-                                                <button onClick={() => purchase(NFTID, userNFT)} href className="btn btn-primary item-btn display-7" target="_blank">Buy NFT  </button>
+                                                <button onClick={() => purchase(NFTID, userNFT)} className="btn btn-primary item-btn display-7" target="_blank">Buy NFT  </button>
                                             </div>
                                         </div>
                                     </div>
