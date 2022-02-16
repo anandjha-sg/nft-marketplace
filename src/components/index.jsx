@@ -30,7 +30,7 @@ export default function Home(props) {
             len = len - 1
             await getUserSaleNFTs(address)
             //set nfts when every user is fetched
-            if (len == 0) {
+            if (len === 0) {
                 console.log(allNFT);
                 setNFTs(allNFT)
             }
