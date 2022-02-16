@@ -8,14 +8,14 @@ import FlowToken from 0x7e60df042a9c0868
 transaction {
 
   prepare(acct: AuthAccount) {
-    acct.save(<- MyNFT.createEmptyCollection(), to: /storage/MyNFTCollection)
-    acct.link<&MyNFT.Collection{MyNFT.CollectionPublic, NonFungibleToken.CollectionPublic}>(/public/MyNFTCollection, target: /storage/MyNFTCollection)
-    acct.link<&MyNFT.Collection>(/private/MyNFTCollection, target: /storage/MyNFTCollection)
+    acct.save(<- MyNFT.createEmptyCollection(), to: /storage/MyCryptonautCollection)
+    acct.link<&MyNFT.Collection{MyNFT.CollectionPublic, NonFungibleToken.CollectionPublic}>(/public/MyCryptonautCollection, target: /storage/MyCryptonautCollection)
+    acct.link<&MyNFT.Collection>(/private/MyCryptonautCollection, target: /storage/MyCryptonautCollection)
     
-    let MyNFTCollection = acct.getCapability<&MyNFT.Collection>(/private/MyNFTCollection)
+    let MyCryptonautCollection = acct.getCapability<&MyNFT.Collection>(/private/MyCryptonautCollection)
     let FlowTokenVault = acct.getCapability<&FlowToken.Vault{FungibleToken.Receiver}>(/public/flowTokenReceiver)
 
-    acct.save(<- NFTMarketplace.createSaleCollection(MyNFTCollection: MyNFTCollection, FlowTokenVault: FlowTokenVault), to: /storage/MySaleCollection)
+    acct.save(<- NFTMarketplace.createSaleCollection(MyCryptonautCollection: MyCryptonautCollection, FlowTokenVault: FlowTokenVault), to: /storage/MySaleCollection)
     acct.link<&NFTMarketplace.SaleCollection{NFTMarketplace.SaleCollectionPublic}>(/public/MySaleCollection, target: /storage/MySaleCollection)
   }
 
